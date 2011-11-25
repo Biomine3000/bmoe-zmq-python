@@ -13,4 +13,7 @@
 
   3. Install pyzeromq from sources (just run python setup.py install, virtualenv magic)
 
-  4. We are in Business!
+  4. Configuration
+     : cp conf.py.template conf.py
+
+  5. We are in Business!
