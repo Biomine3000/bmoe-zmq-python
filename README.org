@@ -1,0 +1,16 @@
+#+TITLE: README for object-exchange
+
+* Quickstart
+
+  1. Python virtual environment setup
+     : virtualenv env
+     : source env/bin/activate
+     
+     The source-command initializes you a non-invasive Python environment and
+     modifies PATH accordingly.
+
+  2. Install the zeromq C-library (--prefix=PATH_TO_YOUR_VIRTUALENV_ROOT).
+
+  3. Install pyzeromq from sources (just run python setup.py install, virtualenv magic)
+
+  4. We are in Business!
