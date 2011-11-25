@@ -51,7 +51,8 @@ class BusinessObject(object):
                 raise ve
 
         if not self.metadata.has_key('mimetype'):
-            raise MissingMimeTypeError("Missing mimetype from metadata")
+            raise MissingMimeTypeError("Missing mimetype from metadata (keys: %s)" %
+                                       ', '.join([repr(k) for k in self.metadata.keys()]))
 
         if len(self.metadata['mimetype'].split('/')) != 2:
             raise InvalidMimeTypeError("Invalid mime type: %s" % self.metadata['mimetype'])

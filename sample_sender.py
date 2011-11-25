@@ -15,7 +15,7 @@ socket.connect(in_address)
 
 
 for i in range(10):
-    header = json.dumps({"mime-type": "text/plain"})
+    header = json.dumps({"mimetype": "text/plain"})
     msg = header + '\0' + "m%i" % i
     # OR msg = PlaintextObject("m%i" % i).bytes()!
 
