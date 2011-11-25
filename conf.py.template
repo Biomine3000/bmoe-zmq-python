@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# in_address = 'ipc:///tmp/object-system-input'
+# out_address = 'ipc:///tmp/object-system-output'
+# in_address = 'tcp://127.0.0.1:2001'
+# out_address = 'tcp://127.0.0.1:2000'

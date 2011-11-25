@@ -1,0 +1,5 @@
+*.pyc
+conf.py
+env
+pyzmq-*
+zeromq-*

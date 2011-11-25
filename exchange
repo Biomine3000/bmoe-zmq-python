@@ -1,0 +1,39 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import traceback
+import json
+
+from time import sleep
+
+import zmq
+
+from object_system.object import BusinessObject, PlaintextObject
+from conf import *
+
+
+context = zmq.Context()
+
+socket = context.socket(zmq.REP)
+socket.bind(in_address)
+
+pub_socket = context.socket(zmq.PUB)
+pub_socket.connect(out_address)
+
+
+while True:
+    success = True
+    try:
+        msg = socket.recv()
+        print "<< %s" % msg
+        obj = BusinessObject(msg)
+    except Exception, e:
+        socket.send(PlaintextObject(e.__class__.__name__ + ": " + str(e)).bytes())
+        success = False
+
+    if success is True:
+        pub_socket.send(obj.bytes())
+        print ">>>> %s" % obj.bytes()
+
+        to_msg = obj.metadata['id']
+        socket.send(to_msg)
+        print "<< %s" % to_msg
