@@ -10,7 +10,7 @@ from conf import *
 context = zmq.Context()
 socket = context.socket(zmq.SUB)
 socket.setsockopt(zmq.SUBSCRIBE,'')
-socket.bind(out_address)
+socket.connect(out_address)
 
 while True:
     msg = socket.recv()

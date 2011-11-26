@@ -17,7 +17,7 @@ socket = context.socket(zmq.REP)
 socket.bind(in_address)
 
 pub_socket = context.socket(zmq.PUB)
-pub_socket.connect(out_address)
+pub_socket.bind(out_address)
 
 
 while True:
