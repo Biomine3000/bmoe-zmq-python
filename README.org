@@ -7,11 +7,14 @@
      : source env/bin/activate
      
      The source-command initializes you a non-invasive Python environment and
-     modifies PATH accordingly.
+     modifies PATH accordingly.  virtualenv then takes care of setting your Python
+     so that everything is installed into it.
 
-  2. Install the zeromq C-library (--prefix=PATH_TO_YOUR_VIRTUALENV_ROOT).
+  2. Install the zeromq C-library (./configure --prefix=PATH_TO_YOUR_VIRTUALENV && make install).
+     http://www.zeromq.org/intro:get-the-software
 
-  3. Install pyzeromq from sources (just run python setup.py install, virtualenv magic)
+  3. Install Python bindings from sources (python setup.py install --pyzmq=PATH_TO_YOUR_VIRTUALENV)
+     https://github.com/zeromq/pyzmq/downloads
 
   4. Configuration
      : cp conf.py.template conf.py
