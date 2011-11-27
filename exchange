@@ -27,6 +27,7 @@ while True:
         print "<< %s" % msg
         obj = BusinessObject(msg)
     except Exception, e:
+        print "! %s" % PlaintextObject(e.__class__.__name__ + ": " + str(e)).bytes()
         socket.send(PlaintextObject(e.__class__.__name__ + ": " + str(e)).bytes())
         success = False
 
